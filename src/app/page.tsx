@@ -1,5 +1,5 @@
-import Course from '@/app/course/page';
 import Link from 'next/link';
+import styles from '@/app/app.module.css'
 
 export default function Home() {
   return (
@@ -26,16 +26,29 @@ function CourseButton() {
     <>
       <ol>
         <li>
-          <Link href="/course">Clique aqui</Link>
+          <CourseCard />
         </li>
         <li>
-          <Link href="/course">Clique aqui</Link>
+          <CourseCard />
         </li>
         <li>
-          <Link href="/course">Clique aqui</Link>
+          <CourseCard />
         </li>
       </ol>
       
     </>
+  );
+}
+
+
+function CourseCard() {
+  return(
+    <div className={ styles.carro }>
+      <p>Descrição da matéria a</p>
+      <img className='rounded-xl h-32' src="https://algoritmosempython.com.br/images/algoritmos-python/estruturas-dados/Arvore.png" alt="arvore"/>
+      <Link className='' href="/course">
+        <button>Acessar</button>
+      </Link>
+    </div>
   );
 }

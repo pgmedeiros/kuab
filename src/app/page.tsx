@@ -12,43 +12,26 @@ export default function Home() {
 function Semestre() {
   return (
 
-    <>
-      <h5>Semestre 1</h5>
-      <CourseButton />
-    </>
+    <div className={styles.main}>
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+    </div>
 
   );
 }
-
-
-function CourseButton() {
-  return (
-    <>
-      <ol>
-        <li>
-          <CourseCard />
-        </li>
-        <li>
-          <CourseCard />
-        </li>
-        <li>
-          <CourseCard />
-        </li>
-      </ol>
-      
-    </>
-  );
-}
-
 
 function CourseCard() {
   return(
-    <div className={ styles.carro }>
-      <p>Descrição da matéria a</p>
-      <img className='rounded-xl h-32' src="https://algoritmosempython.com.br/images/algoritmos-python/estruturas-dados/Arvore.png" alt="arvore"/>
-      <Link className='' href="/course">
-        <button>Acessar</button>
+    <div className={ styles.courseCard }>
+      <img src='https://imgs.search.brave.com/ZwbiXkVL-43SpzagJwN3JXkJib5C9k8QJ7N_1nD9Oh0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzI0LzQzLzg4/LzM2MF9GXzUyNDQz/ODg3N19QWkZ6d2M1/T1dKM01UV1FWRmZI/S3d1MURSVk1hU2dQ/eC5qcGc' className={ styles.courseCardImg }></img>
+      <p className={ styles.courseCardTitle}>Algoritmo e Estrutura de Dados I</p>
+      <p className={ styles.courseCardDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <Link className={ styles.courseCardButton } href="/course">
+        <button className= { styles.button } >Acessar</button>
       </Link>
+    
+    
     </div>
   );
 }

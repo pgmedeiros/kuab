@@ -1,15 +1,77 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f2f5;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  margin: 0;
+  padding: 0;
+}
+
 .shape {
     height: 200px;
     width: 220px;
     border-bottom: 30px solid black;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-  }
+}
+
+.courseCard {
+  padding: 20px;
+  margin-top: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 4fr 1fr;
+  background-color: #fffefe;
+  border-radius: 15px;
+}
+
+.courseCardImg {
+  width: 90%;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 4 ;
+}
 
 
-.carro {
-  display: block;
-  width: 500px;
-  height: 200px;
-  background-color: blue;
+
+.courseCardTitle {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.courseCardDescription {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+}
+
+.courseCardButton {
+  grid-column-start: 4;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.button {
+  border-radius: 100px;
+  background-color: #342e8b;
+  border: none;
+  color: #fffefe;
+  width: 150px;
+  height: 30px;
 }

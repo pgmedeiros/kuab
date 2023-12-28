@@ -3,21 +3,21 @@ const { db } = require('@vercel/postgres');
 const lectures = [
     {
       id: 'd7eaa454-ccec-4404-bde4-6c69603b7cb9',
-      link: 'https://www.youtube.com/watch?v=h_cscbKu-lY&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE',
+      link: 'https://www.youtube.com/embed/h_cscbKu-lY?si=9AwvsMc-nOxwG8hG',
       position: '1',
       course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'
     },
     {
       id: 'f0823cbf-0901-427e-830f-48a3ca858d4a',
-      link: 'https://www.youtube.com/watch?v=1Uz8wXKdzcA&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE&index=2',
+      link: 'https://www.youtube.com/embed/1Uz8wXKdzcA?si=rPZ03_83-dJ7Bx1S',
       position: '2',
       course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'
     },
     {
       id: 'ce617aff-befc-4e86-871a-ff74ea78699e',
-      link: 'https://www.youtube.com/watch?v=X60pMaSdo2A&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE&index=3',
+      link: 'https://www.youtube.com/embed/X60pMaSdo2A?si=GBWMWNbyfW2fjmFK',
       position: '3',
       course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'

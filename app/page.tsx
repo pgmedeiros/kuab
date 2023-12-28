@@ -20,7 +20,7 @@ async function Semestre() {
       
       {courses?.map((course) => {
         return (
-          <CourseCard name={course.name} description={course.description} />
+          <CourseCard key={course.name} name={course.name} description={course.description} />
         );
       })}
 

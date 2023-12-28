@@ -1,15 +1,15 @@
 import { sql } from '@vercel/postgres';
-import { Course } from './definitions';
+import { Course, Lecture } from './definitions';
 
 
 export async function getClassFromSubject() {
   
     try {
   
-      const data = await sql<Course>`
+      const data = await sql<Lecture>`
       SELECT
         link
-      FROM from course
+      FROM from lectures
     `; 
       return data.rows;
   

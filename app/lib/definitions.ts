@@ -1,3 +1,7 @@
 export type Course = {
-    link: string;
+    name: string;
+}
+
+export type Lecture = {
+    link: string; 
 }

@@ -5,26 +5,35 @@ const lectures = [
       id: 'd7eaa454-ccec-4404-bde4-6c69603b7cb9',
       link: 'https://www.youtube.com/watch?v=h_cscbKu-lY&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE',
       position: '1',
-      course: 'AED1',
+      course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'
     },
     {
       id: 'f0823cbf-0901-427e-830f-48a3ca858d4a',
       link: 'https://www.youtube.com/watch?v=1Uz8wXKdzcA&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE&index=2',
       position: '2',
-      course: 'AED1',
+      course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'
     },
     {
       id: 'ce617aff-befc-4e86-871a-ff74ea78699e',
       link: 'https://www.youtube.com/watch?v=X60pMaSdo2A&list=PL5TPkym335qztD0JofGEyVcdmlNf7arzE&index=3',
       position: '3',
-      course: 'AED1',
+      course_id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
       university: 'ufscar'
     }
   ];
 
-async function seedClassAlgorithmOne(client) {
+
+  const courses = [
+    {
+      id: 'b39ae685-7050-4fd7-891a-93777f2fd2cc',
+      name: 'Algoritmos e Estrutura de Dados I',
+      description: 'Familiarizar os estudantes com as várias estruturas da informação, buscando habilitá-los a contar com esses recursos no desenvolvimento de outras atividades de ciências de computação.',
+    }
+  ];
+
+async function seedLecturesAlgorithm(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "lectures" table if it doesn't exist
@@ -33,8 +42,9 @@ async function seedClassAlgorithmOne(client) {
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         link VARCHAR(1000) NOT NULL,
         position TEXT NOT NULL,
-        course TEXT NOT NULL,
-        university TEXT NOT NULL
+        id_course UUID NOT NULL,
+        university TEXT NOT NULL,
+        FOREIGN KEY (id_course) REFERENCES courses (id)
       );
     `;
 
@@ -44,8 +54,8 @@ async function seedClassAlgorithmOne(client) {
     const insertedLectures = await Promise.all(
       lectures.map(async (lecture) => {
         return client.sql`
-        INSERT INTO lectures (id, link, position, course, university)
-        VALUES (${lecture.id}, ${lecture.link}, ${lecture.position}, ${lecture.course}, ${lecture.university})
+        INSERT INTO lectures (id, link, position, id_course, university)
+        VALUES (${lecture.id}, ${lecture.link}, ${lecture.position}, ${lecture.course_id}, ${lecture.university})
         ON CONFLICT (id) DO NOTHING;
       `;
       }),
@@ -63,10 +73,48 @@ async function seedClassAlgorithmOne(client) {
   }
 }
 
+async function seedCourses(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    // Create the "courses" table if it doesn't exist
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS courses (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL      
+      );
+    `;
+
+    console.log(`Created "courses" table`);
+
+    // Insert data into the "courses" table
+    const insertedCourses = await Promise.all(
+      courses.map(async (course) => {
+        return client.sql`
+        INSERT INTO courses (id, name, description)
+        VALUES (${course.id}, ${course.name}, ${course.description})
+        ON CONFLICT (id) DO NOTHING;
+      `;
+      }),
+    );
+
+    console.log(`Seeded ${insertedCourses.length} courses`);
+
+    return {
+      createTable,
+      courses: insertedCourses,
+    };
+  } catch (error) {
+    console.error('Error seeding courses:', error);
+    throw error;
+  }
+}
+
 async function main() {
   const client = await db.connect();
 
-  await seedClassAlgorithmOne(client);
+  await seedCourses(client);
+  await seedLecturesAlgorithm(client);
   await client.end();
 }
 

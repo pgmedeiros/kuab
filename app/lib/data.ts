@@ -2,7 +2,7 @@ import { sql } from '@vercel/postgres';
 import { Course, Lecture } from './definitions';
 
 
-export async function getClassFromSubject() {
+export async function getLectures() {
   
     try {
   
@@ -17,4 +17,15 @@ export async function getClassFromSubject() {
       console.log(error);
     }
   
+}
+
+export async function getCourses() {
+  try {
+    const data = await sql<Course>`SELECT name, description FROM courses`;
+
+    return data.rows;
+  }
+  catch(error) {
+    console.log(error);
+  }
 }

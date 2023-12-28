@@ -1,8 +1,3 @@
-export type Revenue = {
-    month: string;
-    value: number;
-}
-
-export type Subject = {
+export type Course = {
     link: string;
 }

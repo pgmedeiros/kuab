@@ -95,3 +95,28 @@
   width: 100%;
   height: 100%;
 }
+
+
+.navbar {
+  background-color: #342e8b;
+  height: 50px;
+}
+
+.internalNav {
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: #fffefe;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}

@@ -26,9 +26,12 @@ export async function getLectures(id_course: string) {
     }  
 }
 
-export async function getCourses() {
+export async function getCourses(id_semester : string) {
+
+  unstable_noStore();
+
   try {
-    const data = await sql<Course>`SELECT id, name, description FROM courses`;
+    const data = await sql<Course>`SELECT id, name, description FROM courses WHERE courses.semester = ${id_semester}`;
 
     return data.rows;
   }

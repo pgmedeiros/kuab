@@ -23,7 +23,7 @@ export default function Home() {
       </ul>
       
       <p>
-      Assim, aqui organizo e compartilho parte do conhecimento gerado por professores que foram disponibilizados na internet. Não criei nada aqui, apenas organizei baseado nas grades curriculares de universidades públicas no brasil.
+      DE, aqui organizo e compartilho aulas que foram postadas online. Não criei nada aqui, apenas organizei baseado baseado na <a href="https://cc.ufc.br/curso/matriz-curricular/">grade curricular da Universidade Federal do Ceará.</a>.
       </p>
       
       <p>Os números ordinais no menu acima indicam o semestre. Clique e assista as aulas. Aos poucos também serão adicionados listas de exercício e materiais para leitura.</p>

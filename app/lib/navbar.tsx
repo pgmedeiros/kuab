@@ -15,7 +15,6 @@ export default function Navbar() {
                 <Link className={styles.title} href="/semester/5">Quinto</Link>
                 <Link className={styles.title} href="/semester/6">Sexto</Link>
                 <Link className={styles.title} href="/semester/7">Sétimo</Link>
-                <Link className={styles.title} href="/semester/8">Oitavo</Link>
             </div>
           
         </nav>

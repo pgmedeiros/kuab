@@ -13,7 +13,7 @@ export default async function Course({ params }: { params: { id : string } }) {
         <div className= {styles.main}>
             { lectures?.map((lecture) => {
                 return (
-                    <Video link= {lecture.link} />
+                    <Video key= {lecture.link} link= {lecture.link} />
                 );
             }) }
         </div>

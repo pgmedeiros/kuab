@@ -27,7 +27,6 @@ export default async function Semestre({ params }: { params: { id : string } }) 
     
     return(
       <div className={ styles.courseCard }>
-        <img src='https://imgs.search.brave.com/ZwbiXkVL-43SpzagJwN3JXkJib5C9k8QJ7N_1nD9Oh0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzI0LzQzLzg4/LzM2MF9GXzUyNDQz/ODg3N19QWkZ6d2M1/T1dKM01UV1FWRmZI/S3d1MURSVk1hU2dQ/eC5qcGc' className={ styles.courseCardImg }></img>
         <p className={ styles.courseCardTitle}> { name } </p>
         <p className={ styles.courseCardDescription}> { description } </p>
         <Link className={ styles.courseCardButton } href={ link } >

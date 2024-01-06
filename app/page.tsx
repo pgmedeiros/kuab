@@ -23,7 +23,7 @@ export default function Home() {
       </ul>
       
       <p>
-      Aqui organizo e compartilho aulas que foram postadas online. Não criei nada, apenas organizei baseado baseado na <a href="https://cc.ufc.br/curso/matriz-curricular/">grade curricular da Universidade Federal do Ceará</a>.
+      Aqui organizo e compartilho aulas que foram postadas online. Não criei nada, apenas organizei baseado na <a href="https://cc.ufc.br/curso/matriz-curricular/">grade curricular da Universidade Federal do Ceará</a>.
       </p>
       
       <p>Os números ordinais no menu acima indicam o semestre. Clique e assista as aulas. Aos poucos também serão adicionados listas de exercício e materiais para leitura.</p>
